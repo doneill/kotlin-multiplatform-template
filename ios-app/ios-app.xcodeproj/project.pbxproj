@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FEC4C9F2239AD712002EE982 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
+		FEC4C9F3239AD712002EE982 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEC5DF7822794BB2004F7259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7722794BB2004F7259 /* AppDelegate.swift */; };
 		FEC5DF7A22794BB2004F7259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7922794BB2004F7259 /* ViewController.swift */; };
 		FEC5DF7D22794BB2004F7259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5DF7B22794BB2004F7259 /* Main.storyboard */; };
@@ -14,9 +16,6 @@
 		FEC5DF8222794BB3004F7259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5DF8022794BB3004F7259 /* LaunchScreen.storyboard */; };
 		FEC5DF8D22794BB3004F7259 /* ios_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF8C22794BB3004F7259 /* ios_appTests.swift */; };
 		FEC5DF9822794BB3004F7259 /* ios_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF9722794BB3004F7259 /* ios_appUITests.swift */; };
-		FEC5DFAD22795656004F7259 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5DFAC22795656004F7259 /* main.framework */; };
-		FEC5DFAE22795660004F7259 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5DFAC22795656004F7259 /* main.framework */; };
-		FEC5DFAF22795660004F7259 /* main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5DFAC22795656004F7259 /* main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FEC5DFB022795661004F7259 /* Embed Frameworks */ = {
+		FEC4C9F4239AD712002EE982 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FEC5DFAF22795660004F7259 /* main.framework in Embed Frameworks */,
+				FEC4C9F3239AD712002EE982 /* SharedCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FEC4C9F1239AD712002EE982 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../lib/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
 		FEC5DF7422794BB2004F7259 /* ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5DF7722794BB2004F7259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5DF7922794BB2004F7259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 		FEC5DF9322794BB3004F7259 /* ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5DF9722794BB3004F7259 /* ios_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_appUITests.swift; sourceTree = "<group>"; };
 		FEC5DF9922794BB3004F7259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEC5DFAC22795656004F7259 /* main.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = main.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC5DFAD22795656004F7259 /* main.framework in Frameworks */,
-				FEC5DFAE22795660004F7259 /* main.framework in Frameworks */,
+				FEC4C9F2239AD712002EE982 /* SharedCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,14 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FEC4C9F0239AD712002EE982 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEC4C9F1239AD712002EE982 /* SharedCode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEC5DF6B22794BB2004F7259 = {
 			isa = PBXGroup;
 			children = (
-				FEC5DFAC22795656004F7259 /* main.framework */,
 				FEC5DF7622794BB2004F7259 /* ios-app */,
 				FEC5DF8B22794BB3004F7259 /* ios-appTests */,
 				FEC5DF9622794BB3004F7259 /* ios-appUITests */,
 				FEC5DF7522794BB2004F7259 /* Products */,
+				FEC4C9F0239AD712002EE982 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +163,7 @@
 				FEC5DF7022794BB2004F7259 /* Sources */,
 				FEC5DF7122794BB2004F7259 /* Frameworks */,
 				FEC5DF7222794BB2004F7259 /* Resources */,
-				FEC5DFB022795661004F7259 /* Embed Frameworks */,
+				FEC4C9F4239AD712002EE982 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -478,10 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../lib/build/xcode-frameworks",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -501,10 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../lib/build/xcode-frameworks",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
