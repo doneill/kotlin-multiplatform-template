@@ -1,2 +1,2 @@
-include ':app', ':lib'
-rootProject.name='kt-multiplatform'
+include ':app',
+        ':lib'
