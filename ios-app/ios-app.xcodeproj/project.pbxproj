@@ -222,13 +222,16 @@
 				TargetAttributes = {
 					FEC5DF7322794BB2004F7259 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1140;
 					};
 					FEC5DF8722794BB3004F7259 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = FEC5DF7322794BB2004F7259;
 					};
 					FEC5DF9222794BB3004F7259 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1140;
 						TestTargetID = FEC5DF7322794BB2004F7259;
 					};
 				};
@@ -492,7 +495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -512,7 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -532,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-app.app/ios-app";
 			};
@@ -553,7 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-appTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-app.app/ios-app";
 			};
@@ -573,7 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "ios-app";
 			};
@@ -593,7 +596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-appUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "ios-app";
 			};
