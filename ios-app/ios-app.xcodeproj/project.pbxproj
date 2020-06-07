@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FEC4C9F2239AD712002EE982 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
-		FEC4C9F3239AD712002EE982 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE34F4FF248C66CE00933BD4 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
+		FE34F500248C66CE00933BD4 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE34F502248C66F500933BD4 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
 		FEC5DF7822794BB2004F7259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7722794BB2004F7259 /* AppDelegate.swift */; };
 		FEC5DF7A22794BB2004F7259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7922794BB2004F7259 /* ViewController.swift */; };
 		FEC5DF7D22794BB2004F7259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5DF7B22794BB2004F7259 /* Main.storyboard */; };
@@ -36,13 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FEC4C9F4239AD712002EE982 /* Embed Frameworks */ = {
+		FE34F501248C66CE00933BD4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FEC4C9F3239AD712002EE982 /* SharedCode.framework in Embed Frameworks */,
+				FE34F500248C66CE00933BD4 /* SharedCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEC4C9F2239AD712002EE982 /* SharedCode.framework in Frameworks */,
+				FE34F502248C66F500933BD4 /* SharedCode.framework in Frameworks */,
+				FE34F4FF248C66CE00933BD4 /* SharedCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +165,7 @@
 				FEC5DF7022794BB2004F7259 /* Sources */,
 				FEC5DF7122794BB2004F7259 /* Frameworks */,
 				FEC5DF7222794BB2004F7259 /* Resources */,
-				FEC4C9F4239AD712002EE982 /* Embed Frameworks */,
+				FE34F501248C66CE00933BD4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# move to the xcode-frameworks folder\ncd \"$SRCROOT/../lib/build/xcode-frameworks\"\n# run the gradle task\n./gradlew :lib:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "cd \"../lib/build/xcode-frameworks\"\n./gradlew :lib:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -487,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "../lib/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,7 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "../lib/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
