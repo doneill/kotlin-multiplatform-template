@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlinx-serialization'
 
@@ -18,22 +19,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     packagingOptions {
-        exclude 'META-INF/atomicfu.kotlin_module'
-        exclude 'META-INF/kotlinx-io.kotlin_module'
-        exclude 'META-INF/kotlinx-coroutines-io.kotlin_module'
-        exclude 'META-INF/ktor-client-core.kotlin_module'
-        exclude 'META-INF/ktor-http.kotlin_module'
-        exclude 'META-INF/ktor-utils.kotlin_module'
+        exclude 'META-INF/*.kotlin_module'
     }
 }
 
 dependencies {
     implementation project (':lib')
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     implementation "androidx.appcompat:appcompat:$andXVersion"
-    implementation "androidx.core:core-ktx:$andXVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$andXJunitVersion"
+}
+
+// build and run app
+task runDebugApp(type: Exec) {
+    dependsOn 'installDebug'
+    def adb = new File("${System.env.ANDROID_HOME}", "platform-tools${File.separator}adb")
+    commandLine adb, "shell", "am", "start", "-n", "com.jdoneill.ktmultiplatform/com.jdoneill.ktmultiplatform.ui.MainActivity"
 }

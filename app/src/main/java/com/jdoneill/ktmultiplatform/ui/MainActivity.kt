@@ -1,8 +1,9 @@
-package com.jdoneill.ktmultiplatform
+package com.jdoneill.ktmultiplatform.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.jdoneill.ktmultiplatform.R
 import com.jdoneill.platform.getDate
 
 class MainActivity : AppCompatActivity() {

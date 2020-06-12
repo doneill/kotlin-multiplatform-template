@@ -7,6 +7,12 @@ plugins {
 }
 
 kotlin {
+    val coroutine_version = "1.3.5-native-mt"
+    val ktor_version = "1.3.2"
+    val serializer_version = "0.20.0"
+
+    jvm("android")
+
     // select iOS target platform depending on the Xcode environment variables
     // iPhone simulator : presets.iosX64 | real iDevice 64 bit : presets.iosArm64
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -23,27 +29,25 @@ kotlin {
         }
     }
 
-    jvm("android")
-
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.1.1")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.10.0")
-        implementation("io.ktor:ktor-client-core:1.1.2")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_version")
+        implementation("io.ktor:ktor-client-core:$ktor_version")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.10.0")
-        implementation("io.ktor:ktor-client-android:1.1.2")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializer_version")
+        implementation("io.ktor:ktor-client-android:$ktor_version")
     }
 
     sourceSets["iosMain"].dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.1.1")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.10.0")
-        implementation("io.ktor:ktor-client-ios:1.1.2")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutine_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serializer_version")
+        implementation("io.ktor:ktor-client-ios:$ktor_version")
     }
 }
 

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE34F4FF248C66CE00933BD4 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
-		FE34F500248C66CE00933BD4 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FE34F502248C66F500933BD4 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC4C9F1239AD712002EE982 /* SharedCode.framework */; };
+		FE29932924932FD70083D567 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE29932824932FD70083D567 /* SharedCode.framework */; };
+		FE29932A24932FD70083D567 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FE29932824932FD70083D567 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FEC5DF7822794BB2004F7259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7722794BB2004F7259 /* AppDelegate.swift */; };
 		FEC5DF7A22794BB2004F7259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF7922794BB2004F7259 /* ViewController.swift */; };
 		FEC5DF7D22794BB2004F7259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5DF7B22794BB2004F7259 /* Main.storyboard */; };
@@ -37,13 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FE34F501248C66CE00933BD4 /* Embed Frameworks */ = {
+		FE29932B24932FD70083D567 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FE34F500248C66CE00933BD4 /* SharedCode.framework in Embed Frameworks */,
+				FE29932A24932FD70083D567 /* SharedCode.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,8 +50,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE29932824932FD70083D567 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = ../lib/build/bin/ios/debugFramework/SharedCode.framework; sourceTree = "<group>"; };
 		FEC4C9F1239AD712002EE982 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../lib/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
-		FEC5DF7422794BB2004F7259 /* ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC5DF7422794BB2004F7259 /* Mpp Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mpp Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5DF7722794BB2004F7259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5DF7922794BB2004F7259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FEC5DF7C22794BB2004F7259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,8 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE34F502248C66F500933BD4 /* SharedCode.framework in Frameworks */,
-				FE34F4FF248C66CE00933BD4 /* SharedCode.framework in Frameworks */,
+				FE29932924932FD70083D567 /* SharedCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +96,7 @@
 		FEC4C9F0239AD712002EE982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE29932824932FD70083D567 /* SharedCode.framework */,
 				FEC4C9F1239AD712002EE982 /* SharedCode.framework */,
 			);
 			name = Frameworks;
@@ -116,7 +116,7 @@
 		FEC5DF7522794BB2004F7259 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEC5DF7422794BB2004F7259 /* ios-app.app */,
+				FEC5DF7422794BB2004F7259 /* Mpp Playground.app */,
 				FEC5DF8822794BB3004F7259 /* ios-appTests.xctest */,
 				FEC5DF9322794BB3004F7259 /* ios-appUITests.xctest */,
 			);
@@ -165,7 +165,7 @@
 				FEC5DF7022794BB2004F7259 /* Sources */,
 				FEC5DF7122794BB2004F7259 /* Frameworks */,
 				FEC5DF7222794BB2004F7259 /* Resources */,
-				FE34F501248C66CE00933BD4 /* Embed Frameworks */,
+				FE29932B24932FD70083D567 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,7 +173,7 @@
 			);
 			name = "ios-app";
 			productName = "ios-app";
-			productReference = FEC5DF7422794BB2004F7259 /* ios-app.app */;
+			productReference = FEC5DF7422794BB2004F7259 /* Mpp Playground.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FEC5DF8722794BB3004F7259 /* ios-appTests */ = {
@@ -301,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"../lib/build/xcode-frameworks\"\n./gradlew :lib:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../lib\" packForXCode \\\n-Pconfiguration.build.dir=\"$CONFIGURATION_BUILD_DIR\"          \\\n-Pkotlin.build.type=\"$KOTLIN_BUILD_TYPE\"                      \\\n-Pkotlin.target=\"$KOTLIN_TARGET\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -495,8 +495,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdoneill.mpp;
+				PRODUCT_NAME = "Mpp Playground";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -515,8 +515,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jdoneill.com.ios-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jdoneill.mpp;
+				PRODUCT_NAME = "Mpp Playground";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
