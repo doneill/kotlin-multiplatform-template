@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlinx-serialization'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -11,6 +12,8 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        project.hasProperty('OPENWEATHER_API_KEY') ? buildConfigField("String", "OPENWEATHER_API_KEY", OPENWEATHER_API_KEY) : buildConfigField("String", "OPENWEATHER_API_KEY", "\"\"")
     }
     buildTypes {
         release {
@@ -18,14 +21,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+    }
 }
 
 dependencies {
     implementation project (':lib')
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
     implementation "androidx.appcompat:appcompat:$andXVersion"
-    implementation "androidx.core:core-ktx:$andXVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$andXJunitVersion"
+}
+
+// build and run app
+task runDebugApp(type: Exec) {
+    dependsOn 'installDebug'
+    def adb = new File("${System.env.ANDROID_HOME}", "platform-tools${File.separator}adb")
+    commandLine adb, "shell", "am", "start", "-n", "com.jdoneill.ktmultiplatform/com.jdoneill.ktmultiplatform.ui.MainActivity"
 }

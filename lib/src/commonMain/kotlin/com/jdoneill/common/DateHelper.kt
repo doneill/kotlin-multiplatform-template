@@ -1,4 +1,4 @@
-package com.jdoneill.platform
+package com.jdoneill.common
 
 // Mark the function dependent on platform implementation to be `expect`
 expect fun getCurrentDate(): String
