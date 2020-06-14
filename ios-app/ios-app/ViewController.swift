@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let pressure = response.pressure
         let humidity = response.humidity
         
-        let formatted = String(format: "Girdwood Weather\nTemp: %.2f\(DEGREE)\n Feels Like: %.2f\(DEGREE)\nMax: %.2f\(DEGREE)\nMin: %.2f\(DEGREE)\nPressure: \(pressure)\nHumidity: \(humidity)",
+        let formatted = String(format: "Girdwood Weather\nTemp: %.1f\(DEGREE)\n Feels Like: %.1f\(DEGREE)\nMax: %.1f\(DEGREE)\nMin: %.1f\(DEGREE)\nPressure: \(pressure)\nHumidity: \(humidity)",
                                temp, feelsLikeTemp, tempMax, tempMin)
         
         weatherView.text = formatted
