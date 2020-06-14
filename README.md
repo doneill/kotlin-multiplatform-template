@@ -27,7 +27,7 @@ To use your API Key, modify the `apiKey` variable in `ViewController.swift`:
 let apiKey = "YOUR-API-KEY-GOES-HERE"
 ```
 ## Blog Series
- - [Getting Started](http://gh.jdoneill.com/kotlin-multiplatform/)
+ - [Getting Started](http://gh.jdoneill.com/2019/12/06/kotlin-mulitplatform/)
 
 ## Licensing
 A copy of the license is available in the repository's [LICENSE](LICENSE) file.
