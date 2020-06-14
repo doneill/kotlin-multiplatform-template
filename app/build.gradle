@@ -12,6 +12,8 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        project.hasProperty('OPENWEATHER_API_KEY') ? buildConfigField("String", "OPENWEATHER_API_KEY", OPENWEATHER_API_KEY) : buildConfigField("String", "OPENWEATHER_API_KEY", "\"\"")
     }
     buildTypes {
         release {
@@ -31,6 +33,7 @@ android {
 dependencies {
     implementation project (':lib')
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
     implementation "androidx.appcompat:appcompat:$andXVersion"
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"

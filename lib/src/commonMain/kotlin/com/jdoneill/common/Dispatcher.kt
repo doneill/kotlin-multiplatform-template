@@ -1,4 +1,4 @@
-package com.jdoneill.platform
+package com.jdoneill.common
 
 import kotlinx.coroutines.CoroutineDispatcher
 
