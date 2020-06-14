@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
     private fun getWeather(apiKey: String) {
         api.getWeatherMain(
-            location = "47.492820,-121.760330",
+            location = "60.970734,-149.098876",
             apiKey = apiKey,
             success = ::parseResponse,
             failure = ::handleError
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
     private fun parseResponse(response: Main) {
         launch(Main) {
-            val name = "North Bend Weather"
+            val name = "Girdwood Weather"
             val temp = response.temp
             val feelsLikeTemp = response.feels_like
             val tempMax = response.temp_max

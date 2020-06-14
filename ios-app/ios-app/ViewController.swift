@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     func getWeather(apiKey: String) {
         api.getWeatherMain(
-            location: "47.492820,-121.760330",
+            location: "60.970734,-149.098876",
             apiKey: apiKey,
             success: { data in
                 self.parseResponse(response: data)
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         let pressure = response.pressure
         let humidity = response.humidity
         
-        let formatted = String(format: "North Bend Weather\nTemp: %.2f\(DEGREE)\n Feels Like: %.2f\(DEGREE)\nMax: %.2f\(DEGREE)\nMin: %.2f\(DEGREE)\nPressure: \(pressure)\nHumidity: \(humidity)",
+        let formatted = String(format: "Girdwood Weather\nTemp: %.2f\(DEGREE)\n Feels Like: %.2f\(DEGREE)\nMax: %.2f\(DEGREE)\nMin: %.2f\(DEGREE)\nPressure: \(pressure)\nHumidity: \(humidity)",
                                temp, feelsLikeTemp, tempMax, tempMin)
         
         weatherView.text = formatted
