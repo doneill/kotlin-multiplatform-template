@@ -1,5 +1,5 @@
-# Kotlin Multiplatform Playground
-This project is for experimenting with Kotlin Multiplatform. 
+# Kotlin Multiplatform Playground Template
+This project is for experimenting with Kotlin Multiplatform
 
 ![kmp image](kmp-app.png)
 
@@ -24,7 +24,7 @@ To use your API Key, modify the `apiKey` variable in `ViewController.swift`:
 
 ```swift
 // replace with your api key
-let apiKey = "YOUR-API-KEY-GOES-HERE"
+let apiKey = "YOUR-API-KEY"
 ```
 ## Blog Series
  - [Getting Started](http://gh.jdoneill.com/2019/12/06/kotlin-mulitplatform/)
