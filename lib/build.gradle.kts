@@ -17,9 +17,9 @@ kotlin {
     // iPhone simulator : presets.iosX64 | real iDevice 64 bit : presets.iosArm64
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
     if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
-    ::iosArm64
+        ::iosArm64
     else
-    ::iosX64
+        ::iosX64
 
     iOSTarget("ios") {
         binaries {
