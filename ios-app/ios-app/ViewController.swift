@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let apiKey = "YOUR-API-KEY-GOES-HERE"
+        let apiKey = "YOUR-API-KEY"
         getWeather(apiKey: apiKey)
         
         let date = DateHelperKt.getDate()
