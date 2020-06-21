@@ -7,9 +7,6 @@ pluginManagement {
             if (requested.id.id == "kotlinx-serialization") {
                 useModule("org.jetbrains.kotlin:kotlin-serialization:${requested.version}")
             }
-            if (requested.id.id == "com.android.library") {
-                useModule("com.android.tools.build:gradle:${requested.version}")
-            }
             if (requested.id.id == "com.android.application") {
                 useModule("com.android.tools.build:gradle:${requested.version}")
             }
