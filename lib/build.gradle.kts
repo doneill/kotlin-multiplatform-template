@@ -3,14 +3,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-    id("org.jlleitschuh.gradle.ktlint") version "9.1.1"
 }
 
 kotlin {
-    val coroutine_version = "1.3.5-native-mt"
-    val ktor_version = "1.3.2"
-    val serializer_version = "0.20.0"
-
     jvm("android")
 
     // select iOS target platform depending on the Xcode environment variables
@@ -30,24 +25,24 @@ kotlin {
     }
 
     sourceSets["commonMain"].dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_version")
-        implementation("io.ktor:ktor-client-core:$ktor_version")
+        implementation(kotlin("stdlib-common", BuildPluginsVersion.KOTLIN))
+        implementation(Coroutines.COMMON)
+        implementation(Kotlin.SERIALIZATION_COMMON)
+        implementation(Ktor.COMMON_CORE)
     }
 
     sourceSets["androidMain"].dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializer_version")
-        implementation("io.ktor:ktor-client-android:$ktor_version")
+        implementation(kotlin("stdlib", BuildPluginsVersion.KOTLIN))
+        implementation(Coroutines.JDK)
+        implementation(Coroutines.ANDROID)
+        implementation(Kotlin.SERIALIZATION)
+        implementation(Ktor.ANDROID)
     }
 
     sourceSets["iosMain"].dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutine_version")
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serializer_version")
-        implementation("io.ktor:ktor-client-ios:$ktor_version")
+        implementation(Coroutines.NATIVE)
+        implementation(Kotlin.SERIALIZATION_IOS)
+        implementation(Ktor.IOS)
     }
 }
 
