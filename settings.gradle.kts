@@ -23,9 +23,9 @@ pluginManagement {
 
 rootProject.name = "kotlin-multiplatform-template"
 
-include (
+include(
     "app",
     "lib"
     )
 
- enableFeaturePreview("GRADLE_METADATA")
+enableFeaturePreview("GRADLE_METADATA")

@@ -22,7 +22,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven( url = "https://kotlin.bintray.com/kotlinx" )
+        maven(url = "https://kotlin.bintray.com/kotlinx")
     }
 }
 
