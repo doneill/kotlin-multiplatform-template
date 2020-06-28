@@ -14,8 +14,8 @@
 		FEC5DF8222794BB3004F7259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5DF8022794BB3004F7259 /* LaunchScreen.storyboard */; };
 		FEC5DF8D22794BB3004F7259 /* ios_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF8C22794BB3004F7259 /* ios_appTests.swift */; };
 		FEC5DF9822794BB3004F7259 /* ios_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5DF9722794BB3004F7259 /* ios_appUITests.swift */; };
-		FEFA5C8324A9392C0008CB01 /* JDOCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFA5C8224A9392C0008CB01 /* JDOCommon.framework */; };
-		FEFA5C8424A9392C0008CB01 /* JDOCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEFA5C8224A9392C0008CB01 /* JDOCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEEB755324A9483800880B3D /* JDOCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEB755224A9483800880B3D /* JDOCommon.framework */; };
+		FEEB755424A9483800880B3D /* JDOCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEEB755224A9483800880B3D /* JDOCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FEFA5C8424A9392C0008CB01 /* JDOCommon.framework in Embed Frameworks */,
+				FEEB755424A9483800880B3D /* JDOCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,8 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FE29932824932FD70083D567 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = ../lib/build/bin/ios/debugFramework/SharedCode.framework; sourceTree = "<group>"; };
-		FEC4C9F1239AD712002EE982 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../lib/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
 		FEC5DF7422794BB2004F7259 /* Mpp Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mpp Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5DF7722794BB2004F7259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC5DF7922794BB2004F7259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +63,7 @@
 		FEC5DF9322794BB3004F7259 /* ios-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5DF9722794BB3004F7259 /* ios_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_appUITests.swift; sourceTree = "<group>"; };
 		FEC5DF9922794BB3004F7259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEFA5C8224A9392C0008CB01 /* JDOCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JDOCommon.framework; path = "../lib/build/xcode-frameworks/JDOCommon.framework"; sourceTree = "<group>"; };
+		FEEB755224A9483800880B3D /* JDOCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JDOCommon.framework; path = "../common/build/xcode-frameworks/JDOCommon.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEFA5C8324A9392C0008CB01 /* JDOCommon.framework in Frameworks */,
+				FEEB755324A9483800880B3D /* JDOCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,9 +112,7 @@
 		FEC4C9F0239AD712002EE982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEFA5C8224A9392C0008CB01 /* JDOCommon.framework */,
-				FE29932824932FD70083D567 /* SharedCode.framework */,
-				FEC4C9F1239AD712002EE982 /* SharedCode.framework */,
+				FEEB755224A9483800880B3D /* JDOCommon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -319,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../lib\" packForXCode \\\n-Pconfiguration.build.dir=\"$CONFIGURATION_BUILD_DIR\"          \\\n-Pkotlin.build.type=\"$KOTLIN_BUILD_TYPE\"                      \\\n-Pkotlin.target=\"$KOTLIN_TARGET\"\n";
+			shellScript = "\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../common\" packForXCode \\\n-Pconfiguration.build.dir=\"$CONFIGURATION_BUILD_DIR\"          \\\n-Pkotlin.build.type=\"$KOTLIN_BUILD_TYPE\"                      \\\n-Pkotlin.target=\"$KOTLIN_TARGET\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -507,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "../lib/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "../common/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,7 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q4KKF2DHRC;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "../lib/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = "../common/build/xcode-frameworks";
 				INFOPLIST_FILE = "ios-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

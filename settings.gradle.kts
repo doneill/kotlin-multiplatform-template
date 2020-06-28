@@ -25,7 +25,7 @@ rootProject.name = "kotlin-multiplatform-template"
 
 include(
     "app",
-    "lib"
+    "common"
     )
 
 enableFeaturePreview("GRADLE_METADATA")

@@ -44,8 +44,7 @@ android {
     }
 }
 
-dependencies {
-    implementation (project (":lib"))
+dependencies { implementation(project(":common"))
     implementation (Plugins.KOTLIN)
     implementation (Coroutines.ANDROID)
     implementation (SqlDelight.RUNTIME_JDK)
