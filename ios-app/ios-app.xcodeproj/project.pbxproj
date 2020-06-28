@@ -93,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE0C539D24A910D30043A943 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5DF7922794BB2004F7259 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE0C539E24A9111C0043A943 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5DF8022794BB3004F7259 /* LaunchScreen.storyboard */,
+				FEC5DF7B22794BB2004F7259 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FEC4C9F0239AD712002EE982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,11 +143,10 @@
 		FEC5DF7622794BB2004F7259 /* ios-app */ = {
 			isa = PBXGroup;
 			children = (
+				FE0C539E24A9111C0043A943 /* Resources */,
+				FE0C539D24A910D30043A943 /* View Controllers */,
 				FEC5DF7722794BB2004F7259 /* AppDelegate.swift */,
-				FEC5DF7922794BB2004F7259 /* ViewController.swift */,
-				FEC5DF7B22794BB2004F7259 /* Main.storyboard */,
 				FEC5DF7E22794BB3004F7259 /* Assets.xcassets */,
-				FEC5DF8022794BB3004F7259 /* LaunchScreen.storyboard */,
 				FEC5DF8322794BB3004F7259 /* Info.plist */,
 			);
 			path = "ios-app";
