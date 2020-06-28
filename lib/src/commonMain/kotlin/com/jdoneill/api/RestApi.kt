@@ -1,7 +1,6 @@
 package com.jdoneill.api
 
 import com.jdoneill.common.ApplicationDispatcher
-import com.jdoneill.model.Main
 import com.jdoneill.model.WeatherResponse
 
 import io.ktor.client.HttpClient
@@ -24,22 +23,18 @@ class RestApi {
 
     private val client = HttpClient()
 
-    fun getWeatherMain(location: String, apiKey: String, success: (Main) -> Unit, failure: (Throwable) -> Unit) {
+    fun getWeather(lat: String, lng: String, apiKey: String, success: (WeatherResponse) -> Unit, failure: (Throwable) -> Unit) {
         GlobalScope.launch(ApplicationDispatcher) {
             try {
-                // location = "lat,lon"
-                val lat = location.substringBefore(",", "")
-                val lon = location.substringAfter(",", "")
-
                 val response = client.get<HttpStatement> {
                     url("$BASE_URL$API_V2_WEATHER")
                     parameter("units", "imperial")
                     parameter("lat", lat)
-                    parameter("lon", lon)
+                    parameter("lon", lng)
                     parameter("appid", apiKey)
                 }.execute()
+
                 Json.nonstrict.parse(WeatherResponse.serializer(), response.readText())
-                    .main
                     .also(success)
             } catch (e: Exception) {
                 failure(e)

@@ -9,13 +9,13 @@ import com.jdoneill.api.RestApi
 import com.jdoneill.ktmultiplatform.BuildConfig
 import com.jdoneill.ktmultiplatform.R
 import com.jdoneill.common.getDate
-import com.jdoneill.model.Main
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
+import kotlin.random.Random
 
 const val APIKEY = BuildConfig.OPENWEATHER_API_KEY
 
@@ -36,29 +36,32 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         job = Job()
         api = RestApi()
 
-        getWeather(APIKEY)
+        val location = randomWaCoords()
+        Log.d("Random", location.toString())
+        getWeather(location, APIKEY)
 
         findViewById<TextView>(R.id.date_view).text = getDate()
     }
 
-    private fun getWeather(apiKey: String) {
-        api.getWeatherMain(
-            location = "60.970734,-149.098876",
+    private fun getWeather(latLng: Pair<Double, Double>, apiKey: String) {
+        api.getWeather(
+            lat = latLng.first.toString(),
+            lng = latLng.second.toString(),
             apiKey = apiKey,
             success = ::parseResponse,
             failure = ::handleError
         )
     }
 
-    private fun parseResponse(response: Main) {
+    private fun parseResponse(response: WeatherResponse) {
         launch(Main) {
-            val name = "Girdwood Weather"
-            val temp = response.temp
-            val feelsLikeTemp = response.feels_like
-            val tempMax = response.temp_max
-            val tempMin = response.temp_min
-            val pressure = response.pressure
-            val humidity = response.humidity
+            val name = response.name
+            val temp = response.main.temp
+            val feelsLikeTemp = response.main.feels_like
+            val tempMax = response.main.temp_max
+            val tempMin = response.main.temp_min
+            val pressure = response.main.pressure
+            val humidity = response.main.humidity
 
             val weatherDisplay = getString(R.string.weather_text,
                                                                 name,
@@ -73,10 +76,24 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         }
     }
 
+    private fun randomWaCoords():Pair<Double, Double> {
+        val random = Random.Default
+
+        val lat = (45..49).shuffled().first()
+        val latDecimal = random.nextDouble()
+        val lng = (-124..-116).shuffled().first()
+        val lngDecimal = random.nextDouble()
+
+        val y = lat + latDecimal
+        val x = lng + lngDecimal
+
+        return Pair(y, x)
+    }
+
     private fun handleError(ex: Throwable) {
         launch(Main) {
-            val msg = ex.message ?: "Unknown error"
-            Log.d("Error", msg)
+            val msg = ex.message
+            Log.d("Weather Response Error", msg)
         }
     }
 }
