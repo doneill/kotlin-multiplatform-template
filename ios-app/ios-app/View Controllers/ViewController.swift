@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         let temp = response.main.temp
         let id = response.id
 
-        kmpQuery.insertWeather(id: id as? KotlinLong, name: name, latest_temp: Double(temp), timestamp: DateUtilsKt.getDate())
+        kmpQuery.insertWeather(id: KotlinLong(value: id), name: name, latest_temp: Double(temp), timestamp: DateUtilsKt.getDate())
         let results = kmpQuery.selectAll().executeAsList()
 
         for result in results {
