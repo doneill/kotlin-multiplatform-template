@@ -1,0 +1,22 @@
+CREATE TABLE Weather (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    latest_temp REAL NOT NULL DEFAULT 0,
+    timestamp TEXT NOT NULL
+);
+
+selectAll:
+SELECT * FROM Weather;
+
+selectById:
+SELECT * FROM Weather WHERE id = ?;
+
+selectByName:
+SELECT * FROM Weather WHERE name = ?;
+
+insertWeather:
+INSERT OR REPLACE INTO Weather(id, name, latest_temp, timestamp)
+VALUES (?,?,?,?);
+
+deleteAll:
+DELETE FROM Weather;

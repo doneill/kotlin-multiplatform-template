@@ -12,11 +12,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateView: UITextView!
     @IBOutlet weak var weatherView: UITextView!
     
+    weak var kmpQuery: KmpModelQueries!
+    
     internal var DEGREE: String = "\u{00B0}"
     internal var api = RestApi()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let driver = KmpDriverFactory()
+        let db = KmpDriverFactoryKt.createDb(kmpDriverFactory: driver)
+        kmpQuery = db.kmpModelQueries
         
         let apiKey = "YOUR-API-KEY"
         let (lat, lng) = randomWaCoords()
@@ -44,6 +50,14 @@ class ViewController: UIViewController {
     func parseResponse(response: WeatherResponse) {
         let name = response.name
         let temp = response.main.temp
+        let id = response.id
+
+        kmpQuery.insertWeather(id: id as? KotlinLong, name: name, latest_temp: Double(temp), timestamp: DateUtilsKt.getDate())
+        let results = kmpQuery.selectAll().executeAsList()
+
+        for result in results {
+            print(result)
+        }
 
         let feelsLikeTemp = response.main.feels_like
         let tempMin = response.main.temp_min

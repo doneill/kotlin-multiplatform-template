@@ -6,9 +6,13 @@ import android.util.Log
 import android.widget.TextView
 
 import com.jdoneill.api.RestApi
+import com.jdoneill.common.KmpDriverFactory
+import com.jdoneill.common.createDb
 import com.jdoneill.ktmultiplatform.BuildConfig
 import com.jdoneill.ktmultiplatform.R
 import com.jdoneill.common.getDate
+import com.jdoneill.db.KmpModelQueries
+import com.jdoneill.model.WeatherResponse
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
@@ -26,12 +30,18 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
     private lateinit var job: Job
     private lateinit var api: RestApi
 
+    private lateinit var kmpQuery: KmpModelQueries
+
     override val coroutineContext: CoroutineContext
         get() = job + Main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val driver = KmpDriverFactory(this)
+        val db = createDb(driver)
+        kmpQuery = db.kmpModelQueries
 
         job = Job()
         api = RestApi()
@@ -57,6 +67,15 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         launch(Main) {
             val name = response.name
             val temp = response.main.temp
+            val id = response.id
+
+            kmpQuery.insertWeather(id, name, temp.toDouble(), getDate())
+            val results = kmpQuery.selectAll().executeAsList()
+
+            for (result in results) {
+                Log.d("Weather DB Row", result.id.toString() + " | " + result.name + " | " + result.latest_temp)
+            }
+
             val feelsLikeTemp = response.main.feels_like
             val tempMax = response.main.temp_max
             val tempMin = response.main.temp_min
