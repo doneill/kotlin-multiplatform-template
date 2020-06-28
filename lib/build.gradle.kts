@@ -32,7 +32,7 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "SharedCode"
+                baseName = "JDOCommon"
             }
         }
     }

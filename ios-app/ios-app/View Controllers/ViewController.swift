@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import SharedCode
+import JDOCommon
 
 class ViewController: UIViewController {
     
