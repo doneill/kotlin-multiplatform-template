@@ -48,6 +48,8 @@ dependencies {
     implementation (project (":lib"))
     implementation (Plugins.KOTLIN)
     implementation (Coroutines.ANDROID)
+    implementation (SqlDelight.RUNTIME_JDK)
+    implementation (SqlDelight.RUNTIME_DRIVER_ANDROID)
     implementation (SupportLibs.ANDROIDX_APPCOMPAT)
     implementation (SupportLibs.ANDROIDX_CORE_KTX)
     implementation (SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)

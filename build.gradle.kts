@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath(SqlDelight.GRADLE)
+    }
+}
+
 plugins {
     id("com.android.application") version BuildPluginsVersion.GRADLE apply false
     kotlin("android") version BuildPluginsVersion.KOTLIN apply false

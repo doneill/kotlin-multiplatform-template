@@ -11,6 +11,7 @@ object Versions {
     const val CORE_KTX = "1.3.0"
     const val KTOR = "1.3.2"
     const val SERIALIZER = "0.20.0"
+    const val SQLDELIGHT = "1.3.0"
     // testing dependencies
     const val ANDROIDX_TEST_EXT = "1.1.1"
     const val ANDROIDX_TEST = "1.2.0"
@@ -51,6 +52,15 @@ object Ktor {
     const val COMMON_SERIALIZATION ="io.ktor:ktor-client-serialization:${Versions.KTOR}"
     const val ANDROID_SERIALZATION ="io.ktor:ktor-client-serialization-jvm:${Versions.KTOR}"
     const val IOS_SERIALIZATION ="io.ktor:ktor-client-serialization-native:${Versions.KTOR}"
+}
+
+object SqlDelight{
+    const val GRADLE = "com.squareup.sqldelight:gradle-plugin:${Versions.SQLDELIGHT}"
+    const val RUNTIME = "com.squareup.sqldelight:runtime:${Versions.SQLDELIGHT}"
+    const val RUNTIME_JDK = "com.squareup.sqldelight:runtime-jvm:${Versions.SQLDELIGHT}"
+    const val RUNTIME_DRIVER_COMMON = "com.squareup.sqldelight:sqlite-driver:${Versions.SQLDELIGHT}"
+    const val RUNTIME_DRIVER_IOS = "com.squareup.sqldelight:native-driver:${Versions.SQLDELIGHT}"
+    const val RUNTIME_DRIVER_ANDROID = "com.squareup.sqldelight:android-driver:${Versions.SQLDELIGHT}"
 }
 
 object SupportLibs {

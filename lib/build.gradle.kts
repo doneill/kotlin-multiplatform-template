@@ -3,10 +3,23 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
+    id("com.android.library")
+    id("com.squareup.sqldelight")
+}
+
+android {
+    compileSdkVersion(Sdk.COMPILE_SDK_VERSION)
+    defaultConfig {
+        minSdkVersion(Sdk.MIN_SDK_VERSION)
+        targetSdkVersion(Sdk.TARGET_SDK_VERSION)
+        versionCode = AppCoordinates.APP_VERSION_CODE
+        versionName = AppCoordinates.APP_VERSION_NAME
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
 }
 
 kotlin {
-    jvm("android")
+    android()
 
     // select iOS target platform depending on the Xcode environment variables
     // iPhone simulator : presets.iosX64 | real iDevice 64 bit : presets.iosArm64
@@ -25,24 +38,43 @@ kotlin {
     }
 
     sourceSets["commonMain"].dependencies {
+        // kotlin
         implementation(kotlin("stdlib-common", BuildPluginsVersion.KOTLIN))
+        // Coroutines
         implementation(Coroutines.COMMON)
-        implementation(Kotlin.SERIALIZATION_COMMON)
+        // Ktor
         implementation(Ktor.COMMON_CORE)
+        // Serialize
+        implementation(Kotlin.SERIALIZATION_COMMON)
+        // SQL Delight
+        implementation(SqlDelight.RUNTIME)
     }
 
     sourceSets["androidMain"].dependencies {
+        // kotlin
         implementation(kotlin("stdlib", BuildPluginsVersion.KOTLIN))
+
+        // Coroutines
         implementation(Coroutines.JDK)
         implementation(Coroutines.ANDROID)
-        implementation(Kotlin.SERIALIZATION)
+
+        // Ktor
         implementation(Ktor.ANDROID)
+        // Serialize
+        implementation(Kotlin.SERIALIZATION)
+        // SQL Delight
+        implementation(SqlDelight.RUNTIME_DRIVER_ANDROID)
     }
 
     sourceSets["iosMain"].dependencies {
+        // Coroutines
         implementation(Coroutines.NATIVE)
-        implementation(Kotlin.SERIALIZATION_IOS)
+        // Ktor
         implementation(Ktor.IOS)
+        // Serialize
+        implementation(Kotlin.SERIALIZATION_IOS)
+        // SQL Delight
+        implementation(SqlDelight.RUNTIME_DRIVER_IOS)
     }
 }
 
@@ -70,6 +102,13 @@ val packForXcode by tasks.creating(Sync::class) {
                 "cd '${rootProject.rootDir}'\n" +
                 "./gradlew \$@\n")
         gradlew.setExecutable(true)
+    }
+}
+
+sqldelight {
+    database("KmpDb") {
+        packageName = "com.jdoneill.db"
+        sourceFolders = listOf("sqldelight")
     }
 }
 
