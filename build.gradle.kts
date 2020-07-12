@@ -22,10 +22,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven(url = "https://kotlin.bintray.com/kotlinx")
+        maven( "https://kotlin.bintray.com/kotlinx" )
+        maven( "https://kotlin.bintray.com/kotlin-js-wrappers/" )
     }
-}
-
-tasks.register("clean", Delete::class.java) {
-    delete(rootProject.buildDir)
 }

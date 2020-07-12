@@ -34,6 +34,7 @@ object Kotlin {
     const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.SERIALIZER}"
     const val SERIALIZATION_COMMON = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.SERIALIZER}"
     const val SERIALIZATION_IOS = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${Versions.SERIALIZER}"
+    const val SERIALIZATION_WEB = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.SERIALIZER}"
 }
 
 object Coroutines {
@@ -41,6 +42,7 @@ object Coroutines {
     const val JDK = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
     const val NATIVE = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${Versions.COROUTINES}"
     const val ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
+    const val WEB = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${Versions.COROUTINES}"
     const val TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
 }
 
@@ -48,10 +50,13 @@ object Ktor {
     const val COMMON_CORE = "io.ktor:ktor-client-core:${Versions.KTOR}"
     const val ANDROID = "io.ktor:ktor-client-android:${Versions.KTOR}"
     const val IOS = "io.ktor:ktor-client-ios:${Versions.KTOR}"
+    const val WEB = "io.ktor:ktor-client-js:${Versions.KTOR}"
+    const val WEB_LOGGING = "io.ktor:ktor-client-logging-js:${Versions.KTOR}"
     const val IOS_CORE =     "io.ktor:ktor-client-core-native:${Versions.KTOR}"
     const val COMMON_SERIALIZATION ="io.ktor:ktor-client-serialization:${Versions.KTOR}"
     const val ANDROID_SERIALZATION ="io.ktor:ktor-client-serialization-jvm:${Versions.KTOR}"
     const val IOS_SERIALIZATION ="io.ktor:ktor-client-serialization-native:${Versions.KTOR}"
+    const val WEB_SERIALIZATION = "io.ktor:ktor-client-serialization-js:${Versions.KTOR}"
 }
 
 object SqlDelight{
@@ -61,6 +66,7 @@ object SqlDelight{
     const val RUNTIME_DRIVER_COMMON = "com.squareup.sqldelight:sqlite-driver:${Versions.SQLDELIGHT}"
     const val RUNTIME_DRIVER_IOS = "com.squareup.sqldelight:native-driver:${Versions.SQLDELIGHT}"
     const val RUNTIME_DRIVER_ANDROID = "com.squareup.sqldelight:android-driver:${Versions.SQLDELIGHT}"
+    const val RUNTIME_DRIVER_JS = "com.squareup.sqldelight:runtime-js:${Versions.SQLDELIGHT}"
 }
 
 object SupportLibs {

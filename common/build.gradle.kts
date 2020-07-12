@@ -37,6 +37,10 @@ kotlin {
         }
     }
 
+    js {
+        browser {  }
+    }
+
     sourceSets["commonMain"].dependencies {
         // kotlin
         implementation(kotlin("stdlib-common", BuildPluginsVersion.KOTLIN))
@@ -75,6 +79,18 @@ kotlin {
         implementation(Kotlin.SERIALIZATION_IOS)
         // SQL Delight
         implementation(SqlDelight.RUNTIME_DRIVER_IOS)
+    }
+
+    sourceSets["jsMain"].dependencies {
+        implementation(kotlin("stdlib-js"))
+        // Coroutines
+        implementation(Coroutines.WEB)
+        // Ktor
+        implementation(Ktor.WEB)
+        // Serialize
+        implementation(Kotlin.SERIALIZATION_WEB)
+        // SQL Delight
+        implementation(SqlDelight.RUNTIME_DRIVER_JS)
     }
 }
 
