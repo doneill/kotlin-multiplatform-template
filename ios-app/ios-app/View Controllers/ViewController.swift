@@ -23,22 +23,16 @@ class ViewController: UIViewController {
         let driver = KmpDriverFactory()
         let db = KmpDriverFactoryKt.createDb(kmpDriverFactory: driver)
         kmpQuery = db.kmpModelQueries
-        
-        let apiKey = "YOUR-API-KEY"
-        let (lat, lng) = randomWaCoords()
 
-        getWeather(lat: lat, lng: lng, apiKey: apiKey)
+        getWeather()
         
         let date = DateUtilsKt.getDate()
         dateView.text = date
     }
     
     
-    func getWeather(lat: String, lng: String, apiKey: String) {
+    func getWeather() {
         api.getWeather(
-            lat: lat,
-            lng: lng,
-            apiKey: apiKey,
             success: { data in
                 self.parseResponse(response: data)
         }, failure: {
@@ -69,19 +63,6 @@ class ViewController: UIViewController {
                                name, temp, feelsLikeTemp, tempMax, tempMin)
 
         weatherView.text = formatted
-    }
-    
-    func randomWaCoords() -> (String, String) {
-        let lat = Int.random(in: 45 ... 49)
-        let latDecimal = Double.random(in: 0 ..< 1)
-
-        let lng = Int.random(in: -124 ... -116)
-        let lngDecimal = Double.random(in: 0 ..< 1)
-
-        let y = Double(lat) + latDecimal
-        let x = Double(lng) + lngDecimal
-
-        return (String(format: "%f", y), String(format: "%f", x))
     }
 
     internal func handleError(_ error: String?){

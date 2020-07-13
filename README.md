@@ -13,20 +13,13 @@ This project is for experimenting with Kotlin Multiplatform
  ## Open Weather Map
  To access the OpenWeatherMap API you need an [API Key](http://openweathermap.org/appid).
 
- ### Android
- To use your API Key, create a **gradle.properties** file in the root of the **app** module with a string value pair representing your API Key.  This file is not tracked in Git as it is for personal use.
+ ### Common Lib
+ The common library needs access to your api key to interact with the Open Weather Map API. Create a **gradle.properties** file in the root of the **common** module with a string value pair representing your API Key.  This file is not tracked in Git as it is for personal use.
 
  ```groovy
  OPENWEATHER_API_KEY = "YOUR-API-KEY"
  ```
 
-### iOS
-To use your API Key, modify the `apiKey` variable in `ViewController.swift`:
-
-```swift
-// replace with your api key
-let apiKey = "YOUR-API-KEY"
-```
 ## Blog Series
  - [Getting Started](http://gh.jdoneill.com/2019/12/06/kotlin-mulitplatform/)
  - [Multiplatform Persistence with SQLDelight](http://gh.jdoneill.com/2020/06/28/sqldelight/)

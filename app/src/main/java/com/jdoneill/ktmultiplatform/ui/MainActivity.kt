@@ -8,7 +8,6 @@ import android.widget.TextView
 import com.jdoneill.api.RestApi
 import com.jdoneill.common.KmpDriverFactory
 import com.jdoneill.common.createDb
-import com.jdoneill.ktmultiplatform.BuildConfig
 import com.jdoneill.ktmultiplatform.R
 import com.jdoneill.common.getDate
 import com.jdoneill.db.KmpModelQueries
@@ -19,9 +18,6 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
-import kotlin.random.Random
-
-const val APIKEY = BuildConfig.OPENWEATHER_API_KEY
 
 const val DEGREE: String = "\u00B0"
 
@@ -46,18 +42,13 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         job = Job()
         api = RestApi()
 
-        val location = randomWaCoords()
-        Log.d("Random", location.toString())
-        getWeather(location, APIKEY)
+        getWeather()
 
         findViewById<TextView>(R.id.date_view).text = getDate()
     }
 
-    private fun getWeather(latLng: Pair<Double, Double>, apiKey: String) {
+    private fun getWeather() {
         api.getWeather(
-            lat = latLng.first.toString(),
-            lng = latLng.second.toString(),
-            apiKey = apiKey,
             success = ::parseResponse,
             failure = ::handleError
         )
@@ -93,20 +84,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
             findViewById<TextView>(R.id.weather_view).text = weatherDisplay
         }
-    }
-
-    private fun randomWaCoords():Pair<Double, Double> {
-        val random = Random.Default
-
-        val lat = (45..49).shuffled().first()
-        val latDecimal = random.nextDouble()
-        val lng = (-124..-116).shuffled().first()
-        val lngDecimal = random.nextDouble()
-
-        val y = lat + latDecimal
-        val x = lng + lngDecimal
-
-        return Pair(y, x)
     }
 
     private fun handleError(ex: Throwable) {

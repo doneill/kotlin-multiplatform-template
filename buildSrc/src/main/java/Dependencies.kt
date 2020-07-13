@@ -23,6 +23,7 @@ object BuildPluginsVersion {
     const val GRADLE = "4.0.0"
     const val KOTLIN = "1.3.72"
     const val KTLINT = "9.2.1"
+    const val BUILD_CONFIG = "2.0.2"
 }
 
 object Plugins {

@@ -14,6 +14,7 @@ plugins {
     kotlin("android") version BuildPluginsVersion.KOTLIN apply false
     kotlin("plugin.serialization") version BuildPluginsVersion.KOTLIN
     id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
+    id("com.github.gmazzo.buildconfig") version BuildPluginsVersion.BUILD_CONFIG
 }
 
 allprojects {

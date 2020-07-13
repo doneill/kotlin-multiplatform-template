@@ -1,7 +1,9 @@
 package com.jdoneill.api
 
+import com.jdoneill.common.BuildConfig
 import com.jdoneill.common.ApplicationDispatcher
 import com.jdoneill.model.WeatherResponse
+import com.jdoneill.util.RandomLocation
 
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
@@ -16,6 +18,8 @@ import kotlinx.serialization.json.Json
 class RestApi {
 
     companion object {
+        private const val API_KEY = BuildConfig.OPENWEATHER_API_KEY
+
         private const val API_V2 = "/data/2.5/"
         private const val API_V2_WEATHER = "$API_V2/weather"
         private const val BASE_URL = "https://api.openweathermap.org"
@@ -23,7 +27,12 @@ class RestApi {
 
     private val client = HttpClient()
 
-    fun getWeather(lat: String, lng: String, apiKey: String, success: (WeatherResponse) -> Unit, failure: (Throwable) -> Unit) {
+    fun getWeather(success: (WeatherResponse) -> Unit, failure: (Throwable) -> Unit) {
+
+        val location = RandomLocation.washingtonStateCoords()
+        val lat = location.first.toString()
+        val lng = location.second.toString()
+
         GlobalScope.launch(ApplicationDispatcher) {
             try {
                 val response = client.get<HttpStatement> {
@@ -31,7 +40,7 @@ class RestApi {
                     parameter("units", "imperial")
                     parameter("lat", lat)
                     parameter("lon", lng)
-                    parameter("appid", apiKey)
+                    parameter("appid", API_KEY)
                 }.execute()
 
                 Json.nonstrict.parse(WeatherResponse.serializer(), response.readText())

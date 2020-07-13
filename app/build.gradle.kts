@@ -16,12 +16,6 @@ android {
         versionCode = AppCoordinates.APP_VERSION_CODE
         versionName = AppCoordinates.APP_VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        if (project.hasProperty("OPENWEATHER_API_KEY")) {
-            buildConfigField("String", "OPENWEATHER_API_KEY", project.property("OPENWEATHER_API_KEY") as String)
-        } else {
-            buildConfigField("String", "OPENWEATHER_API_KEY", "\"\"")
-        }
     }
 
     buildTypes {
