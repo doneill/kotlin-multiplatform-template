@@ -1,12 +1,15 @@
 # Kotlin Multiplatform Playground Template
 This project is for experimenting with Kotlin Multiplatform
 
-![kmp image](kmp-app.png)
+| Android       | Web           | iOS           | 
+| ------------- | ------------- | ------------- |
+| ![android](assets/android.png)  | ![web](assets/web.png)   | ![iOS](assets/ios.png)   |
 
 ## Dependencies
  - [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
  - [Kotlin Ktor](https://ktor.io/clients/index.html)
  - [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization)
+ - [Kotlin React](https://github.com/JetBrains/kotlin-wrappers/blob/master/kotlin-react/README.md)
  - [SQLDelight](https://cashapp.github.io/sqldelight/)
  - [Open Weather Map](https://openweathermap.org/)
 
