@@ -3,7 +3,7 @@ This project is for experimenting with Kotlin Multiplatform
 
 | Android       | Web           | iOS           | 
 | ------------- | ------------- | ------------- |
-| ![android](assets/android.png)  | ![web](assets/web.png)   | ![iOS](assets/ios.png)   |
+| ![android](images/android.png)  | ![web](images/web.png)   | ![iOS](images/ios.png)   |
 
 ## Dependencies
  - [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
