@@ -13,8 +13,6 @@ external interface AppState : RState {
 class App : RComponent<RProps, AppState>() {
 
     override fun AppState.init() {
-        htmlResponse = "Weather"
-
         val api = RestApi()
         api.getWeather(
             success = ::parseResponse,
@@ -34,17 +32,17 @@ class App : RComponent<RProps, AppState>() {
             val pressure = response.main.pressure
             val humidity = response.main.humidity
 
-            state.htmlResponse = """
-                <p>$name</p>
-                <p>Temp: $temp
-                    Feels like: $feelsLikeTemp
-                    Max: $tempMax
-                    Min: $tempMin
-                    Pressure: $pressure
-                    Humidity: $humidity</p>
-            """.trimIndent()
-
-            console.log("Parse Response", state.htmlResponse)
+            setState {
+                htmlResponse = """
+                    $name 
+                    Temp: $temp 
+                        Feels like: $feelsLikeTemp 
+                        Max: $tempMax 
+                        Min: $tempMin 
+                        Pressure: $pressure 
+                        Humidity: $humidity
+                """.trimIndent()
+            }
         }
 
     }
