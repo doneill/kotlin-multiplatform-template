@@ -1,10 +1,13 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import com.github.gmazzo.gradle.plugins.BuildConfigSourceSet
+
 
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("com.github.gmazzo.buildconfig")
 }
 
 android {
@@ -20,6 +23,7 @@ android {
 
 kotlin {
     android()
+    jvm()
 
     // select iOS target platform depending on the Xcode environment variables
     // iPhone simulator : presets.iosX64 | real iDevice 64 bit : presets.iosArm64
@@ -35,6 +39,10 @@ kotlin {
                 baseName = "JDOCommon"
             }
         }
+    }
+
+    js {
+        browser {  }
     }
 
     sourceSets["commonMain"].dependencies {
@@ -76,6 +84,18 @@ kotlin {
         // SQL Delight
         implementation(SqlDelight.RUNTIME_DRIVER_IOS)
     }
+
+    sourceSets["jsMain"].dependencies {
+        implementation(kotlin("stdlib-js"))
+        // Coroutines
+        implementation(Coroutines.WEB)
+        // Ktor
+        implementation(Ktor.WEB)
+        // Serialize
+        implementation(Kotlin.SERIALIZATION_WEB)
+        // SQL Delight
+        implementation(SqlDelight.RUNTIME_DRIVER_JS)
+    }
 }
 
 val packForXcode by tasks.creating(Sync::class) {
@@ -105,11 +125,18 @@ val packForXcode by tasks.creating(Sync::class) {
     }
 }
 
+buildConfig {
+    if (project.hasProperty("OPENWEATHER_API_KEY")) {
+        buildConfigField("String", "OPENWEATHER_API_KEY", project.property("OPENWEATHER_API_KEY") as String)
+    } else {
+        buildConfigField("String", "OPENWEATHER_API_KEY", "\"\"")
+    }
+}
+
 sqldelight {
     database("KmpDb") {
         packageName = "com.jdoneill.db"
         sourceFolders = listOf("sqldelight")
     }
 }
-
 tasks.getByName("build").dependsOn(packForXcode)

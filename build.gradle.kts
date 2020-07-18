@@ -14,6 +14,7 @@ plugins {
     kotlin("android") version BuildPluginsVersion.KOTLIN apply false
     kotlin("plugin.serialization") version BuildPluginsVersion.KOTLIN
     id("org.jlleitschuh.gradle.ktlint") version BuildPluginsVersion.KTLINT
+    id("com.github.gmazzo.buildconfig") version BuildPluginsVersion.BUILD_CONFIG
 }
 
 allprojects {
@@ -22,10 +23,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven(url = "https://kotlin.bintray.com/kotlinx")
+        maven("https://kotlin.bintray.com/kotlinx")
+        maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
     }
-}
-
-tasks.register("clean", Delete::class.java) {
-    delete(rootProject.buildDir)
 }
