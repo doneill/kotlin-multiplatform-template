@@ -23,7 +23,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven( "https://kotlin.bintray.com/kotlinx" )
-        maven( "https://kotlin.bintray.com/kotlin-js-wrappers/" )
+        maven("https://kotlin.bintray.com/kotlinx")
+        maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
     }
 }
