@@ -11,6 +11,7 @@ object Versions {
     const val CORE_KTX = "1.3.0"
     const val KOTLIN_REACT = "16.13.0-pre.93-kotlin-1.3.70"
     const val KOTLIN_REACT_NPM = "16.13.0"
+    const val KOTLIN_STYLED = "1.0.0-pre.94-kotlin-1.3.70"
     const val KTOR = "1.3.2"
     const val SERIALIZER = "0.20.0"
     const val SQLDELIGHT = "1.3.0"
@@ -40,6 +41,7 @@ object Kotlin {
     const val SERIALIZATION_WEB = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.SERIALIZER}"
     const val REACT = "org.jetbrains:kotlin-react:${Versions.KOTLIN_REACT}"
     const val REACT_DOM = "org.jetbrains:kotlin-react-dom:${Versions.KOTLIN_REACT}"
+    const val STYLED = "org.jetbrains:kotlin-styled:${Versions.KOTLIN_STYLED}"
 }
 
 object Coroutines {

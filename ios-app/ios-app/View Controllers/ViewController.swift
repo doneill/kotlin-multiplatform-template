@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var dateView: UITextView!
     @IBOutlet weak var weatherView: UITextView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     weak var kmpQuery: KmpModelQueries!
     
@@ -30,6 +31,9 @@ class ViewController: UIViewController {
         dateView.text = date
     }
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        getWeather()
+    }
     
     func getWeather() {
         api.getWeather(

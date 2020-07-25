@@ -12,6 +12,7 @@ import com.jdoneill.ktmultiplatform.R
 import com.jdoneill.common.getDate
 import com.jdoneill.db.KmpModelQueries
 import com.jdoneill.model.WeatherResponse
+import kotlinx.android.synthetic.main.activity_main.*
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
@@ -44,7 +45,11 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
         getWeather()
 
-        findViewById<TextView>(R.id.date_view).text = getDate()
+        refreshButton.setOnClickListener {
+            getWeather()
+        }
+
+        dateView.text = getDate()
     }
 
     private fun getWeather() {

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Multiplatform Playground</string>
+    <string name="date_placeholder">Today\'s Date</string>
+    <string name="refresh">Refresh</string>
+    <string name="weather_placeholder">Today\'s Weather</string>
     <string name="weather_text">%1$s \n Temp: %2$.1f%3$s \n Feels Like: %4$.1f%5$s \n High: %6$.1f%7$s \n Low: %8$.1f%9$s \n Pressure: %10$d \n Humidity: %11$d</string>
 </resources>

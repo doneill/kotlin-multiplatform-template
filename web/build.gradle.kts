@@ -18,6 +18,11 @@ dependencies {
     implementation(npm("react", Versions.KOTLIN_REACT_NPM))
     implementation(npm("react-dom", Versions.KOTLIN_REACT_NPM))
 
+    //Kotlin Styled
+    implementation(Kotlin.STYLED)
+    implementation(npm("styled-components"))
+    implementation(npm("inline-style-prefixer"))
+
     implementation(project(":common"))
 }
 

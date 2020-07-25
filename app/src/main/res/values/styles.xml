@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="JDO.Theme.Widget.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textSize">16sp</item>
+        <item name="android:text">@string/refresh</item>
+    </style>
+
 </resources>
