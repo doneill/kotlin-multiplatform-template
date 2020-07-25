@@ -1,5 +1,5 @@
 import react.*
-import react.dom.*
+import styled.styledDiv
 
 external interface WeatherFormatProps: RProps {
     var response: String
@@ -7,7 +7,7 @@ external interface WeatherFormatProps: RProps {
 
 class WeatherFormat: RComponent<WeatherFormatProps, RState>() {
     override fun RBuilder.render() {
-        div {
+        styledDiv {
             +props.response
         }
     }

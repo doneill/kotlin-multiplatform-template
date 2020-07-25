@@ -1,10 +1,15 @@
 import com.jdoneill.api.RestApi
 import com.jdoneill.common.getDate
 import com.jdoneill.model.WeatherResponse
+
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.css.*
+import kotlinx.html.js.onClickFunction
+
 import react.*
 import react.dom.*
+import styled.*
 
 external interface AppState : RState {
     var htmlResponse: String
@@ -12,8 +17,10 @@ external interface AppState : RState {
 
 class App : RComponent<RProps, AppState>() {
 
+    private lateinit var api: RestApi
+
     override fun AppState.init() {
-        val api = RestApi()
+        api = RestApi()
         api.getWeather(
             success = ::parseResponse,
             failure = ::handleError
@@ -58,16 +65,46 @@ class App : RComponent<RProps, AppState>() {
     override fun RBuilder.render() {
         val date = getDate()
 
-        h1 {
+        styledBody {
+            css {
+                backgroundColor = Color.whiteSmoke
+            }
+        }
+
+        styledH1 {
+            css {
+                fontFamily = "Verdana, Geneva, sans-serif"
+            }
             +"Multiplatform Playground"
         }
-        div {
+        styledDiv {
+            css {
+                padding(vertical = 16.px)
+                fontFamily = "Tahoma, Geneva, sans-serif"
+            }
             weatherFormat {
                 response = state.htmlResponse
             }
             p {
                 +(date)
             }
+        }
+        styledButton {
+            css {
+                padding(all = 8.px)
+                borderStyle = BorderStyle.solid
+                backgroundColor = Color.yellow
+                fontFamily = "Tahoma, Geneva, sans-serif"
+            }
+            attrs {
+                onClickFunction = {
+                    api.getWeather(
+                        success = ::parseResponse,
+                        failure = ::handleError
+                    )
+                }
+            }
+            +"Refresh"
         }
     }
 }
