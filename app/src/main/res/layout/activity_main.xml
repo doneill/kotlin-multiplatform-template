@@ -10,19 +10,34 @@
             android:id="@+id/weather_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today's Weather"
+            android:text="@string/weather_placeholder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.148"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.124" />
+            app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        style="@style/JDO.Theme.Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/button_margin"
+        android:minHeight="@dimen/button_height"
+        android:minWidth="@dimen/button_width"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintVertical_bias="0.05"/>
 
     <TextView
-            android:id="@+id/date_view"
+            android:id="@+id/dateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Todays Date"
+            android:text="@string/date_placeholder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
