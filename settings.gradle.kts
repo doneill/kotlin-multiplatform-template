@@ -17,12 +17,9 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        jcenter()
     }
 }
 
 rootProject.name = "kotlin-multiplatform-template"
-
-enableFeaturePreview("GRADLE_METADATA")
 
 include("app", "common", "web")

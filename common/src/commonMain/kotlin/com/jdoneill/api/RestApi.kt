@@ -11,6 +11,7 @@ import io.ktor.client.request.parameter
 import io.ktor.client.request.url
 import io.ktor.client.statement.HttpStatement
 import io.ktor.client.statement.readText
+
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
@@ -43,7 +44,10 @@ class RestApi {
                     parameter("appid", API_KEY)
                 }.execute()
 
-                Json.nonstrict.parse(WeatherResponse.serializer(), response.readText())
+                val json = Json {
+                    ignoreUnknownKeys = true
+                }
+                json.decodeFromString(WeatherResponse.serializer(), response.readText())
                     .also(success)
             } catch (e: Exception) {
                 failure(e)

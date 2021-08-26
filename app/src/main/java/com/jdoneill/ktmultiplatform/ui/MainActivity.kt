@@ -93,8 +93,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
     private fun handleError(ex: Throwable) {
         launch(Main) {
-            val msg = ex.message
-            Log.d("Weather Response Error", msg)
+            Log.d("Weather Response Error", ex.message.toString())
         }
     }
 }

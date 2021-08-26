@@ -1,5 +1,5 @@
 import react.dom.*
-import kotlin.browser.document
+import kotlinx.browser.document
 
 fun main() {
     render(document.getElementById("root")) {
