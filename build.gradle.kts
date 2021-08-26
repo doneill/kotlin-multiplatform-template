@@ -2,7 +2,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath(SqlDelight.GRADLE)
@@ -22,8 +21,5 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
-        maven("https://kotlin.bintray.com/kotlinx")
-        maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
     }
 }
