@@ -13,7 +13,7 @@ class WeatherFormat: RComponent<WeatherFormatProps, RState>() {
     }
 }
 
-fun RBuilder.weatherFormat(handler: WeatherFormatProps.() -> Unit): ReactElement {
+fun RBuilder.weatherFormat(handler: WeatherFormatProps.() -> Unit): Unit {
     return child(WeatherFormat::class) {
         this.attrs(handler)
     }
