@@ -5,6 +5,7 @@ import com.github.gmazzo.gradle.plugins.BuildConfigSourceSet
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
+
     id("com.android.library")
     id("com.squareup.sqldelight")
     id("com.github.gmazzo.buildconfig")
@@ -39,19 +40,19 @@ kotlin {
         }
     }
 
-    js {
-        browser {  }
+    js(IR) {
+        browser { }
     }
 
     sourceSets["commonMain"].dependencies {
         // kotlin
         implementation(kotlin("stdlib-common", BuildPluginsVersion.KOTLIN))
         // Coroutines
-        implementation(Coroutines.COMMON)
+        implementation(Coroutines.CORE)
         // Ktor
-        implementation(Ktor.COMMON_CORE)
+        implementation(Ktor.CORE)
         // Serialize
-        implementation(Kotlin.SERIALIZATION_COMMON)
+        implementation(Kotlin.SERIALIZATION_JSON)
         // SQL Delight
         implementation(SqlDelight.RUNTIME)
     }
@@ -61,24 +62,24 @@ kotlin {
         implementation(kotlin("stdlib", BuildPluginsVersion.KOTLIN))
 
         // Coroutines
-        implementation(Coroutines.JDK)
-        implementation(Coroutines.ANDROID)
+        implementation(Coroutines.CORE)
+//        implementation(Coroutines.ANDROID)
 
         // Ktor
         implementation(Ktor.ANDROID)
         // Serialize
-        implementation(Kotlin.SERIALIZATION)
+        implementation(Kotlin.SERIALIZATION_JSON)
         // SQL Delight
         implementation(SqlDelight.RUNTIME_DRIVER_ANDROID)
     }
 
     sourceSets["iosMain"].dependencies {
         // Coroutines
-        implementation(Coroutines.NATIVE)
+        implementation(Coroutines.CORE)
         // Ktor
         implementation(Ktor.IOS)
         // Serialize
-        implementation(Kotlin.SERIALIZATION_IOS)
+        implementation(Kotlin.SERIALIZATION_JSON)
         // SQL Delight
         implementation(SqlDelight.RUNTIME_DRIVER_IOS)
     }
@@ -90,7 +91,7 @@ kotlin {
         // Ktor
         implementation(Ktor.WEB)
         // Serialize
-        implementation(Kotlin.SERIALIZATION_WEB)
+        implementation(Kotlin.SERIALIZATION_JSON)
         // SQL Delight
         implementation(SqlDelight.RUNTIME_DRIVER_JS)
     }

@@ -8,11 +8,11 @@ object Versions {
     const val APPCOMPAT = "1.1.0"
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val COROUTINES = "1.5.1-native-mt"
-    const val COROUTINES_COMMON = "1.3.8"
     const val CORE_KTX = "1.3.0"
     const val KOTLIN_WRAPPERS_BOM = "0.0.1-pre.237-kotlin-1.5.30"
     const val KOTLIN_REACT_NPM = "17.0.2"
     const val KTOR = "1.6.0"
+    const val KOTLIN_SERIALIZATION = "1.2.2"
     const val SERIALIZER = "1.0-M1-1.4.0-rc"
     const val SQLDELIGHT = "1.5.0"
     // testing dependencies
@@ -35,10 +35,7 @@ object Plugins {
 }
 
 object Kotlin {
-    const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.SERIALIZER}"
-    const val SERIALIZATION_COMMON = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Versions.SERIALIZER}"
-    const val SERIALIZATION_IOS = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${Versions.SERIALIZER}"
-    const val SERIALIZATION_WEB = "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:${Versions.SERIALIZER}"
+    const val SERIALIZATION_JSON = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.KOTLIN_SERIALIZATION}"
     const val WRAPPERS = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:${Versions.KOTLIN_WRAPPERS_BOM}"
     const val REACT = "org.jetbrains.kotlin-wrappers:kotlin-react"
     const val REACT_DOM = "org.jetbrains.kotlin-wrappers:kotlin-react-dom"
@@ -46,8 +43,8 @@ object Kotlin {
 }
 
 object Coroutines {
-    const val COMMON = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${Versions.COROUTINES_COMMON}"
-    const val JDK = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
+    const val COMMON = "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${Versions.COROUTINES}"
+    const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
     const val NATIVE = "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:${Versions.COROUTINES}"
     const val ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     const val WEB = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:${Versions.COROUTINES}"
@@ -55,7 +52,7 @@ object Coroutines {
 }
 
 object Ktor {
-    const val COMMON_CORE = "io.ktor:ktor-client-core:${Versions.KTOR}"
+    const val CORE = "io.ktor:ktor-client-core:${Versions.KTOR}"
     const val ANDROID = "io.ktor:ktor-client-android:${Versions.KTOR}"
     const val IOS = "io.ktor:ktor-client-ios:${Versions.KTOR}"
     const val WEB = "io.ktor:ktor-client-js:${Versions.KTOR}"
