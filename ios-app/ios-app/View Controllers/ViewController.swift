@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherView.backgroundColor = UIColor.white
+        weatherView.textColor = UIColor.black
+        
         let driver = KmpDriverFactory()
         let db = KmpDriverFactoryKt.createDb(kmpDriverFactory: driver)
         kmpQuery = db.kmpModelQueries
