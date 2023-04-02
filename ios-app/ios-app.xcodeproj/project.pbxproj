@@ -175,7 +175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEC5DF9C22794BB3004F7259 /* Build configuration list for PBXNativeTarget "ios-app" */;
 			buildPhases = (
-				FEC5DFAB22795373004F7259 /* ShellScript */,
+				FEC5DFAB22795373004F7259 /* Pack  For Xcode */,
 				FEC5DF7022794BB2004F7259 /* Sources */,
 				FEC5DF7122794BB2004F7259 /* Frameworks */,
 				FEC5DF7222794BB2004F7259 /* Resources */,
@@ -300,7 +300,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FEC5DFAB22795373004F7259 /* ShellScript */ = {
+		FEC5DFAB22795373004F7259 /* Pack  For Xcode */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,6 +309,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Pack  For Xcode";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -509,6 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdoneill.mpp;
 				PRODUCT_NAME = "Mpp Playground";
 				SWIFT_VERSION = 5.0;
@@ -529,6 +531,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jdoneill.mpp;
 				PRODUCT_NAME = "Mpp Playground";
 				SWIFT_VERSION = 5.0;
