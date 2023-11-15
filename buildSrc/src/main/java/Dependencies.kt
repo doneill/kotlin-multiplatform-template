@@ -22,8 +22,8 @@ object Versions {
 }
 
 object BuildPluginsVersion {
-    const val GRADLE = "7.0.1"
-    const val KOTLIN = "1.5.30"
+    const val GRADLE = "7.2.0"
+    const val KOTLIN = "1.6.21"
     const val KTLINT = "9.2.1"
     const val BUILD_CONFIG = "2.0.2"
 }
