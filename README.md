@@ -24,8 +24,8 @@ This project is for experimenting with Kotlin Multiplatform
  ```
 
 ## Blog Series
- - [Getting Started](http://gh.jdoneill.com/2019/12/06/kotlin-mulitplatform/)
- - [Multiplatform Persistence with SQLDelight](http://gh.jdoneill.com/2020/06/28/sqldelight/)
+ - [Getting Started](https://gh.jdoneill.com/2019/12/06/kotlin-mulitplatform/)
+ - [Multiplatform Persistence with SQLDelight](https://gh.jdoneill.com/2020/06/28/sqldelight/)
 
 ## Contributors
 <a href="https://github.com/doneill/kotlin-multiplatform-template/graphs/contributors">
